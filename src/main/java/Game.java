@@ -8,6 +8,7 @@ public class Game {
     JPanel titleNamePanel, startButtonPanel;
     JLabel titleNameLabel;
     Font titlefont = new Font("Times New Roman", Font.PLAIN,80);
+    Font normalFont = new Font("Times New Roman", Font.PLAIN,30);
     JButton startButton;
 
     public static void main(String[] args){
@@ -35,11 +36,13 @@ public class Game {
 
         startButtonPanel = new JPanel();
         startButtonPanel.setBounds(300,400,200,100);
-        startButtonPanel.setBackground(Color.WHITE);
+        startButtonPanel.setBackground(Color.BLACK);
+
 
         startButton = new JButton("START");
         startButton.setBackground(Color.black);
         startButton.setForeground(Color.white);
+        startButton.setFont(normalFont);
 
 
         titleNamePanel.add(titleNameLabel);
