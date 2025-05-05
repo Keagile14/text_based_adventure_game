@@ -5,25 +5,42 @@ public class Game {
 
     JFrame window;
     Container con;
-    JPanel titleNamePanel;
+    JPanel titleNamePanel, startButtonPanel;
+    JLabel titleNameLabel;
+    Font titlefont = new Font("Times New Roman", Font.PLAIN,80);
+
+
     public static void main(String[] args){
 
         new Game();
     }
     public Game(){
         window = new JFrame();
-        window.setSize(800,600); //decides how large window is
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //It adds a function to the window
-        window.getContentPane().setBackground(Color.BLACK); //we just set the colour
+        window.setSize(800,600);
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.getContentPane().setBackground(Color.BLACK);
         window.setLayout(null);
-        window.setVisible(true); //even though window was created in this program, you cannot see. We need to make it appear on the screen
+        window.setVisible(true);
         con = window.getContentPane();
 
         titleNamePanel = new JPanel();
         titleNamePanel.setBounds(100, 100,600,150);
-        titleNamePanel.setBackground(Color.cyan);
+        titleNamePanel.setBackground(Color.BLACK);
+
+        // FIX: Initialize before adding
+        titleNameLabel = new JLabel("ADVENTURE");
+        titleNameLabel.setForeground(Color.white);
+        titleNameLabel.setFont(titlefont);
+        titleNamePanel.add(titleNameLabel);
+
+        startButtonPanel = new JPanel();
+        startButtonPanel.setBounds(300,400,200,100);
+        startButtonPanel.setBackground(Color.WHITE);
+
         con.add(titleNamePanel);
+        con.add(startButtonPanel);
     }
+
 }
 
 
